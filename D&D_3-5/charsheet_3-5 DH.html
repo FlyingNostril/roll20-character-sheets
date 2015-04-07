@@ -864,6 +864,225 @@ fourth attack hits AC[[1d20+(@{bab4})[bab4] +@{weapon1stat}[Ability] +@{size}[si
                 <span class="sheet-table-header2">Misc<br>Mod.</span>
     			<span class="sheet-table-header2">Macro</span>
             </div>
+			<div class="sheet-table-row">
+                <input type="checkbox" name="attr_Athleticsclassskill" title="Athleticsclassskill" value="Class" style="width: 8px;">
+                <span class="sheet-table-header2-left">Athletics</span>
+				<span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_Athletics" title="Athletics" value="(@{Athleticsstat}+@{Athleticsranks}+@{Athleticsmiscmod}+@{Athleticsarmorcheckpen} [Armor check Penalty])" disabled="true"></span>
+				<span><select class="sheet-table-data-center-sm" style="height: 24px; width: 44px; font-size: 0.75em;" name="attr_Athleticsstat" title="Athleticsstat">
+					<option type="text" style="width: 45px;" value="@{str-mod}" selected>Str</option>
+					<option type="text" style="width: 45px;" value="@{dex-mod}">Dex</option>
+				</select></span>
+                <!--span class="sheet-table-data-center-sm">= Str</span-->
+                <span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_Athleticsstatmod" title="Athleticsstatmod" value="@{Athleticsstat}" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_Athleticsranks" title="Athleticsranks" value="0"></span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_Athleticsarmorcheckpen" title="Athleticsarmorcheckpen" style="width: 40px;" value="@{armorcheckpenalty}" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_Athleticsmiscmod" title="Athleticsmiscmod" value="0"></span>
+				<span class="sheet-table-data-center-sm"><textarea rows="1" cols="50" style="width: 50px; height: 20px;" name="attr_Athleticsmacro" title="Athleticsmacro">&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=Athletics check:}} {{checkroll=[[1d20 + @{Athletics}]] }}</textarea></span>
+                <span class="sheet-table-data-center-sm"><button type="roll" name="attr_Athleticscheck" title='Athleticscheck' value="@{Athleticsmacro}"></span>
+            </div>
+            <div class="sheet-table-row">
+                <input type="checkbox" name="attr_appraiseclassskill" title="appraiseclassskill" value="Class" style="width: 8px;">
+                <span class="sheet-table-header2-left">Appraise</span>
+				<span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_appraise" title="appraise" value="(@{int-mod}+@{appraiseranks}+@{appraisemiscmod})" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">= Int</span>
+                <span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_intmod" title="intmod" value="@{int-mod}" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_appraiseranks" title="appraiseranks" value="0"></span>
+                <span class="sheet-table-data-center-sm">+ &nbsp;  -N/A-  &nbsp;  </span>
+				<span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_appraisemiscmod" title="appraisemiscmod" value="0"></span>
+				<span class="sheet-table-data-center-sm"><textarea rows="1" cols="50" style="width: 50px; height: 20px;" name="attr_appraisemacro" title="appraisemacro">/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=Appraise check:}} {{checkroll=[[1d20 + @{appraise}]] }}</textarea></span>
+				<span class="sheet-table-data-center-sm"><button type="roll" name="attr_appraisecheck" title='appraisecheck' value="@{appraisemacro}"></span>
+			</div>
+			<div class="sheet-table-row">
+				<input type="checkbox" name="attr_balanceclassskill" title="balanceclassskill" value="Class" style="width: 8px;">
+				<span class="sheet-table-header2-left">Balance</span>
+				<span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_balance" title="balance" value="(@{dex-mod}+@{balanceranks}+@{balancemiscmod}+@{balancearmorcheckpen} [Armor check Penalty])" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">= Dex</span>
+                <span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_dexmod" title="dexmod" value="@{dex-mod}" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_balanceranks" title="balanceranks" value="0"></span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_balancearmorcheckpen" title="balancearmorcheckpen" style="width: 40px;" value="@{armorcheckpenalty}" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_balancemiscmod" title="balancemiscmod" value="0"></span>
+				<span class="sheet-table-data-center-sm"><textarea rows="1" cols="50" style="width: 50px; height: 20px;" name="attr_balancemacro" title="balancemacro">&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=Balance check:}} {{checkroll=[[1d20 + @{balance}]] }}</textarea></span>
+                <span class="sheet-table-data-center-sm"><button type="roll" name="attr_balancecheck" title='balancecheck' value="@{balancemacro}]]"></span>
+            </div>
+            <div class="sheet-table-row">
+                <input type="checkbox" name="attr_bluffclassskill" title="bluffclassskill" value="Class" style="width: 8px;">
+                <span class="sheet-table-header2-left">Bluff</span>
+				<span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_bluff" title="bluff" value="(@{cha-mod}+@{bluffranks}+@{bluffmiscmod})" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">= Cha</span>
+                <span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_chamod" title="chamod" value="@{cha-mod}" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_bluffranks" title="bluffranks" value="0"></span>
+                <span class="sheet-table-data-center-sm">+ &nbsp;  -N/A-  &nbsp;  </span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_bluffmiscmod" title="bluffmiscmod" value="0"></span>
+				<span class="sheet-table-data-center-sm"><textarea rows="1" cols="50" style="width: 50px; height: 20px;" name="attr_bluffmacro" title="bluffmacro">&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=Bluff check:}} {{checkroll=[[1d20 + @{bluff}]] }}</textarea></span>
+                <span class="sheet-table-data-center-sm"><button type="roll" name="attr_bluffcheck" title='bluffcheck' value="@{bluffmacro}"></span>
+            </div>
+            <div class="sheet-table-row">
+                <input type="checkbox" name="attr_concentrationclassskill" title="concentrationclassskill" value="Class" style="width: 8px;">
+                <span class="sheet-table-header2-left">Concentration</span>
+				<span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_concentration" title="concentration" value="(@{con-mod}+@{concentrationranks}+@{concentrationmiscmod})" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">= Con</span>
+                <span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_conmod" title="conmod" value="@{con-mod}" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_concentrationranks" title="concentrationranks" value="0"></span>
+                <span class="sheet-table-data-center-sm">+ &nbsp;  -N/A-  &nbsp;  </span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_concentrationmiscmod" title="concentrationmiscmod" value="0"></span>
+				<span class="sheet-table-data-center-sm"><textarea rows="1" cols="50" style="width: 50px; height: 20px;" name="attr_concentrationmacro" title="concentrationmacro">&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=Concentration check:}} {{checkroll=[[1d20 + @{concentration}]] }}</textarea></span>
+                <span class="sheet-table-data-center-sm"><button type="roll" name="attr_concentrationcheck" title='concentrationcheck' value="@{concentrationmacro}"></span>
+            </div>
+            <div class="sheet-table-row">
+                <input type="checkbox" name="attr_craft1classskill" title="craft1classskill" value="Class" style="width: 8px;">
+                <span class="sheet-table-header2-left">Craft <input type="text" name="attr_craft1name" title="craft1name" style="font-size: 0.95em; width: 60px;"></span>
+				<span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_craft1" title="craft1" value="(@{int-mod}+@{craft1ranks}+@{craft1miscmod})" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">= Int</span>
+                <span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_intmod" title="intmod" value="@{int-mod}" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_craft1ranks" title="craft1ranks" value="0"></span>
+                <span class="sheet-table-data-center-sm">+ &nbsp;  -N/A-  &nbsp;  </span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_craft1miscmod" title="craft1miscmod" value="0"></span>
+				<span class="sheet-table-data-center-sm"><textarea rows="1" cols="50" style="width: 50px; height: 20px;" name="attr_craft1macro" title="craft1macro">&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=Craft (@{craft1name}) check:}} {{checkroll=[[1d20 + @{craft1} +(?{Artisan's Tools? (-1 for no, 0 for Normal, 1 for Masterwork)|0}*2)[Tool Circumstance Bonus] ]] }}</textarea></span>
+                <span class="sheet-table-data-center-sm"><button type="roll" name="attr_craft1check" title='craft1check' value="@{craft1macro}"></span>
+            </div>
+            <div class="sheet-table-row">
+                <input type="checkbox" name="attr_craft2classskill" title="craft2classskill" value="Class" style="width: 8px;">
+                <span class="sheet-table-header2-left">Craft <input type="text" name="attr_craft2name" title="craft2name" style="font-size: 0.95em; width: 60px;"></span>
+				<span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_craft2" title="craft2" value="(@{int-mod}+@{craft2ranks}+@{craft2miscmod})" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">= Int</span>
+                <span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_intmod" title="intmod" value="@{int-mod}" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_craft2ranks" title="craft2ranks" value="0"></span>
+                <span class="sheet-table-data-center-sm">+ &nbsp;  -N/A-  &nbsp;  </span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_craft2miscmod" title="craft2miscmod" value="0"></span>
+				<span class="sheet-table-data-center-sm"><textarea rows="1" cols="50" style="width: 50px; height: 20px;" name="attr_craft2macro" title="craft2macro">&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=Craft (@{craft2name}) check:}} {{checkroll=[[1d20 + @{craft2} +(?{Artisan's Tools? (-1 for no, 0 for Normal, 1 for Masterwork)|0}*2)[Tool Circumstance Bonus] ]] }}</textarea></span>
+                <span class="sheet-table-data-center-sm"><button type="roll" name="attr_craft2check" title='craft2check' value="@{craft2macro}"></span>
+            </div>
+            <div class="sheet-table-row">
+                <input type="checkbox" name="attr_craft3classskill" title="craft3classskill" value="Class" style="width: 8px;">
+                <span class="sheet-table-header2-left">Craft <input type="text" name="attr_craft3name" title="craft3name" style="font-size: 0.95em; width: 60px;"></span>
+				<span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_craft3" title="craft3" value="(@{int-mod}+@{craft3ranks}+@{craft3miscmod})" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">= Int</span>
+                <span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_intmod" title="intmod" value="@{int-mod}" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_craft3ranks" title="craft3ranks" value="0"></span>
+                <span class="sheet-table-data-center-sm">+ &nbsp;  -N/A-  &nbsp;  </span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_craft3miscmod" title="craft3miscmod" value="0"></span>
+				<span class="sheet-table-data-center-sm"><textarea rows="1" cols="50" style="width: 50px; height: 20px;" name="attr_craft3macro" title="craft3macro">&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=Craft (@{craft3name}) check:}} {{checkroll=[[1d20 + @{craft3} +(?{Artisan's Tools? (-1 for no, 0 for Normal, 1 for Masterwork)|0}*2)[Tool Circumstance Bonus] ]] }}</textarea></span>
+                <span class="sheet-table-data-center-sm"><button type="roll" name="attr_craft3check" title='craft3check' value="@{craft3macro}"></span>
+            </div>
+            <div class="sheet-table-row">
+                <input type="checkbox" name="attr_Cryptographyclassskill" title="Cryptographyclassskill" value="Class" style="width: 8px;">
+                <span class="sheet-table-header2-left">Cryptography</span>
+				<span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_Cryptography" title="Cryptography" value="(@{int-mod}+@{Cryptographyranks}+@{Cryptographymiscmod})" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">= Int</span>
+                <span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_intmod" title="intmod" value="@{int-mod}" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_Cryptographyranks" title="Cryptographyranks" value="0"></span>
+                <span class="sheet-table-data-center-sm">+ &nbsp;  -N/A-  &nbsp;  </span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_Cryptographymiscmod" title="Cryptographymiscmod" value="0"></span>
+				<span class="sheet-table-data-center-sm"><textarea rows="1" cols="50" style="width: 50px; height: 20px;" name="attr_Cryptographymacro" title="Cryptographymacro">/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=Cryptography check:}} {{checkroll=[[1d20 + @{Cryptography}]] }}  {{notes=If fail, [[(1d20 + @{wis-mod})]] vs dc5 to avoid drawing a false conclusion. }}</textarea></span>
+                <span class="sheet-table-data-center-sm"><button type="roll" name="attr_Cryptographycheck" title='Cryptographycheck' value="@{Cryptographymacro}"></span>
+            </div>
+            <div class="sheet-table-row">
+                <input type="checkbox" name="attr_diplomacyclassskill" title="diplomacyclassskill" value="Class" style="width: 8px;">
+                <span class="sheet-table-header2-left">Diplomacy</span>
+				<span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_diplomacy" title="diplomacy" value="(@{cha-mod}+@{diplomacyranks}+@{diplomacymiscmod})" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">= Cha</span>
+                <span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_chamod" title="chamod" value="@{cha-mod}" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_diplomacyranks" title="diplomacyranks" value="0"></span>
+                <span class="sheet-table-data-center-sm">+ &nbsp;  -N/A-  &nbsp;  </span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_diplomacymiscmod" title="diplomacymiscmod" value="0"></span>
+				<span class="sheet-table-data-center-sm"><textarea rows="1" cols="50" style="width: 50px; height: 20px;" name="attr_diplomacymacro" title="diplomacymacro">&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=Diplomacy check:}} {{checkroll=[[1d20 + @{diplomacy}]] }}</textarea></span>
+                <span class="sheet-table-data-center-sm"><button type="roll" name="attr_diplomacycheck" title='diplomacycheck' value="@{diplomacymacro}"></span>
+            </div>
+            <div class="sheet-table-row">
+                <input type="checkbox" name="attr_disabledeviceclassskill" title="disabledeviceclassskill" value="Class" style="width: 8px;">
+                <span class="sheet-table-header2-left">Disable Device</span>
+				<span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_disabledevice" title="disabledevice" value="(@{int-mod}+@{disabledeviceranks}+@{disabledevicemiscmod})" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">= Int</span>
+                <span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_intmod" title="intmod" value="@{int-mod}" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_disabledeviceranks" title="disabledeviceranks" value="0"></span>
+                <span class="sheet-table-data-center-sm">+ &nbsp;  -N/A-  &nbsp;  </span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_disabledevicemiscmod" title="disabledevicemiscmod" value="0"></span>
+				<span class="sheet-table-data-center-sm"><textarea rows="1" cols="50" style="width: 50px; height: 20px;" name="attr_disabledevicemacro" title="disabledevicemacro">&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=Disable Device check:}} {{checkroll=[[1d20 + @{disabledevice}]] }}</textarea></span>
+                <span class="sheet-table-data-center-sm"><button type="roll" name="attr_disableDevicecheck" title='disableDevicecheck' value="@{disabledevicemacro}"></span>
+            </div>
+            <div class="sheet-table-row">
+                <input type="checkbox" name="attr_disguiseclassskill" title="disguiseclassskill" value="Class" style="width: 8px;">
+                <span class="sheet-table-header2-left">Disguise</span>
+				<span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" title="disguise" name="attr_disguise" value="(@{cha-mod}+@{disguiseranks}+@{disguisemiscmod})" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">= Cha</span>
+                <span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_chamod" title="chamod" value="@{cha-mod}" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_disguiseranks" title="disguiseranks" value="0"></span>
+                <span class="sheet-table-data-center-sm">+ &nbsp;  -N/A-  &nbsp;  </span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_disguisemiscmod" title="disguisemiscmod" value="0"></span>
+				<span class="sheet-table-data-center-sm"><textarea rows="1" cols="50" style="width: 50px; height: 20px;" name="attr_disguisemacro" title="disguisemacro">&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=Disguise check:}} {{checkroll=[[1d20 + @{disguise}]] }}</textarea></span>
+                <span class="sheet-table-data-center-sm"><button type="roll" name="attr_disguisecheck" title='disguisecheck' value="@{disguisemacro}"></span>
+            </div>
+            <div class="sheet-table-row">
+                <input type="checkbox" name="attr_escapeartistclassskill" title="escapeartistclassskill" value="Class" style="width: 8px;">
+                <span class="sheet-table-header2-left">Escape Artist</span>
+				<span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_escapeartist" title="escapeartist" title="age" value="(@{dex-mod}+@{escapeartistranks}+@{escapeartistmiscmod}+@{escapeartistarmorcheckpen} [Armor check Penalty])" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">= Dex</span>
+                <span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_dexmod" title="dexmod" value="@{dex-mod}" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_escapeartistranks" title="escapeartistranks" value="0"></span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_escapeartistarmorcheckpen" title="escapeartistarmorcheckpen" style="width: 40px;" value="@{armorcheckpenalty}" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_escapeartistmiscmod" title="escapeartistmiscmod" value="0"></span>
+				<span class="sheet-table-data-center-sm"><textarea rows="1" cols="50" style="width: 50px; height: 20px;" name="attr_escapeartistmacro" title="escapeartistmacro">&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=Escape Artist check:}} {{checkroll=[[1d20 + @{escapeartist}]] }}</textarea></span>
+                <span class="sheet-table-data-center-sm"><button type="roll" name="attr_escapeartistcheck" title='escapeartistcheck' value="@{escapeartistmacro}"></span>
+            </div>
+            <div class="sheet-table-row">
+                <input type="checkbox" name="attr_gatherinformationclassskill" title="gatherinformationclasskill" value="Class" style="width: 8px;">
+                <span class="sheet-table-header2-left">Gather Information</span>
+				<span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_gatherinformation" title="gatherinformation" value="(@{cha-mod}+@{gatherinformationranks}+@{gatherinformationmiscmod})" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">= Cha</span>
+                <span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_chamod" title="chamod" value="@{cha-mod}" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_gatherinformationranks" title="gatherinformationranks" value="0"></span>
+                <span class="sheet-table-data-center-sm">+ &nbsp;  -N/A-  &nbsp;  </span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_gatherinformationmiscmod" title="gatherinformationmiscmod" value="0"></span>
+				<span class="sheet-table-data-center-sm"><textarea rows="1" cols="50" style="width: 50px; height: 20px;" name="attr_gatherinformationmacro" title="gatherinformationmacro">&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=Gather Information check:}} {{checkroll=[[1d20 + @{gatherinformation}]] }}</textarea></span>
+                <span class="sheet-table-data-center-sm"><button type="roll" name="attr_gatherinformationcheck" title='gatherinformationcheck' value="@{gatherinformationmacro}"></span>
+            </div>
+            <div class="sheet-table-row">
+                <input type="checkbox" name="attr_handleanimalclassskill" title="handleanimalclassskill" value="Class" style="width: 8px;">
+                <span class="sheet-table-header2-left">Handle Animal</span>
+				<span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_handleanimal" title="handleanimal" value="(@{cha-mod}+@{handleanimalranks}+@{handleanimalmiscmod})" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">= Cha</span>
+                <span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_chamod" title="chamod" value="@{cha-mod}" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_handleanimalranks" title="handleanimalranks" value="0"></span>
+                <span class="sheet-table-data-center-sm">+ &nbsp;  -N/A-  &nbsp;  </span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_handleanimalmiscmod" title="handleanimalmiscmod" value="0"></span>
+				<span class="sheet-table-data-center-sm"><textarea rows="1" cols="50" style="width: 50px; height: 20px;" name="attr_handleanimalmacro" title="handleanimalmacro">&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=Handle Animal check:}} {{checkroll=[[1d20 + @{handleanimal}]] }}</textarea></span>
+                <span class="sheet-table-data-center-sm"><button type="roll" name="attr_handleanimalcheck" title='handleanimalcheck' value="@{handleanimalmacro}"></span>
+            </div>
+            <div class="sheet-table-row">
+                <input type="checkbox" name="attr_healclassskill" title="healclassskill" value="Class" style="width: 8px;">
+                <span class="sheet-table-header2-left">Heal</span>
+				<span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_heal" title="heal" value="(@{wis-mod}+@{healranks}+@{healmiscmod})" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">= Wis</span>
+                <span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_wismod" title="wismod" value="@{wis-mod}" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_healranks" title="healranks" value="0"></span>
+                <span class="sheet-table-data-center-sm">+ &nbsp;  -N/A-  &nbsp;  </span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_healmiscmod" title="healmiscmod" value="0"></span>
+				<span class="sheet-table-data-center-sm"><textarea rows="1" cols="50" style="width: 50px; height: 20px;" name="attr_healmacro" title="healmacro">&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=Heal check:}} {{checkroll=[[1d20 + @{heal} +(?{Healer's Kit? (1 for yes)|0}*2)[Healer's Kit Circumstance Bonus] )]] }}</textarea></span>
+                <span class="sheet-table-data-center-sm"><button type="roll" name="attr_healcheck" title='healcheck' value="@{healmacro}"></span>
+            </div>
+            <div class="sheet-table-row">
+                <input type="checkbox" name="attr_hideclassskill" title="hideclassskill" value="Class" style="width: 8px;">
+                <span class="sheet-table-header2-left">Hide</span>
+				<span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_hide" title="hide" value="(@{dex-mod}+@{hideranks}+@{hidemiscmod} +@{hidearmorcheckpen} [Armor check Penalty] -@{specialattacksizemod}[hide size mod])" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">= Dex</span>
+                <span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_dexmod" title="dexmod" value="@{dex-mod}" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_hideranks" title="hideranks" value="0"></span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_hidearmorcheckpen" title="hidearmorcheckpen" style="width: 40px;" value="@{armorcheckpenalty}" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_hidemiscmod" title="hidemiscmod" value="0"></span>
+				<span class="sheet-table-data-center-sm"><textarea rows="1" cols="50" style="width: 50px; height: 20px;" name="attr_hidemacro" title="hidemacro">&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=Hide check:}} {{checkroll=[[1d20 + @{hide}]] }}</textarea></span>
+                <span class="sheet-table-data-center-sm"><button type="roll" name="attr_hidecheck" title='hidecheck' value="@{hidemacro}"></span>
+            </div>
+            <div class="sheet-table-row">
+                <input type="checkbox" name="attr_intimidateclassskill" title="intimidateclassskill" value="Class" style="width: 8px;">
+                <span class="sheet-table-header2-left">Intimidate</span>
+				<span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_intimidate" title="intimidate" value="(@{cha-mod}+@{intimidateranks}+@{intimidatemiscmod})" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">= Cha</span>
+                <span class="sheet-table-data-center-sm"><input type="text" class="sheet-table-data-center-skills" name="attr_chamod" title="chamod" value="@{cha-mod}" disabled="true"></span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_intimidateranks" title="intimidateranks" value="0"></span>
+                <span class="sheet-table-data-center-sm">+ &nbsp;  -N/A-  &nbsp;  </span>
+                <span class="sheet-table-data-center-sm">+<input type="text" class="sheet-table-data-center-skills" name="attr_intimidatemiscmod" title="intimidatemiscmod" value="0"></span>
+				<span class="sheet-table-data-center-sm"><textarea rows="1" cols="50" style="width: 50px; height: 20px;" name="attr_intimidatemacro" title="intimidatemacro">&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=Intimidate check:}} {{checkroll=[[1d20 + @{intimidate}]] }}</textarea></span>
+                <span class="sheet-table-data-center-sm"><button type="roll" name="attr_intimidatecheck" title='intimidatecheck' value="@{intimidatemacro}"></span>
             </div>
             <div class="sheet-table-row">
                 <input type="checkbox" name="attr_knowarcanaclassskill" title="knowarcanaclassskill" value="Class" style="width: 8px;">
