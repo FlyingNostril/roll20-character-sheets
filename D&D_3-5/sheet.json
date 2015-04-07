@@ -1,8 +1,8 @@
 {
-	"html": "charsheet_3-5.html",
+	"html": "charsheet_3-5 DH.html",
 	"css": "charsheet_3-5.css",
-	"authors": "Diana P.",
+	"authors": "Diana P.--original author",skills altered by Samuel D. 
 	"preview": "charsheet_3-5.jpg",
-	"roll20userid": "108188",
-	"instructions": "Roll templates now implemented; see descriptions and other information in new Roll Template section at bottom of sheet.  Attack and full attack rolls modifiable in-sheet to allow inclusion of feat- or item-based additions to attacks.  Full attack gives 'undefined' error for attacks one does not have a BAB defined for (remove that part of the macro if BAB is not high enough for 2, 3, or 4 attacks/rnd)"
+	"roll20userid": "108188,456037"
+	"instructions": "Merged skills: Climb and Jump are now Athletics. Merged open lock into disable device, merged forgery and decipher script into cryptography. Removed use rope entirely. Moved athletics to the top of the skill list."
 }
